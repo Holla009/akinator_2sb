@@ -94,6 +94,7 @@ document.getElementById('q2a5').addEventListener('click', () => {
 document.getElementById('q3a1').addEventListener('click', () => {
     goNextQ('question3', 'question4');
     array[5]++;
+    array[7]++;
     array[11]++;
 })
 //question3 a2
@@ -150,6 +151,7 @@ document.getElementById('q4a3').addEventListener('click', () => {
     goNextQ('question4', 'question5');
     array[0]++;
     array[4]++;
+    array[7]++;
 })
 //question4 a4
 document.getElementById('q4a4').addEventListener('click', () => {
@@ -175,36 +177,78 @@ document.getElementById('q4a6').addEventListener('click', () => {
     array[14]++;
 })
 
-function bubblesort(arr){
+//QUESTION 5
+//question5 a1
+document.getElementById('q5a1').addEventListener('click', () => {
+    goNextQ('question5', 'question6');
+    array[3]++;
+})
+//question5 a2
+document.getElementById('q5a2').addEventListener('click', () => {
+    goNextQ('question5', 'question6');
+    array[6]++;
+    array[9]++;
+    array[13]++;
+})
+//question5 a3
+document.getElementById('q5a3').addEventListener('click', () => {
+    goNextQ('question5', 'question6');
+    array[2]++;
+    array[11]++;
+})
+//question5 a4
+document.getElementById('q5a4').addEventListener('click', () => {
+    goNextQ('question5', 'question6');
+    array[1]++;
+    array[2]++;
+    array[7]++;
+    array[8]++;
+    array[10]++;
+    array[12]++;
+})
+//question5 a5
+document.getElementById('q5a5').addEventListener('click', () => {
+    goNextQ('question5', 'question6');
+    array[0]++;
+    array[4]++;
+    array[5]++;
+    array[14]++;
+})
 
-    let n = array.length;
-    let swapped;
+//QUESTION 6
+//question6 a1
+document.getElementById('q6a1').addEventListener('click', () => {
+    goNextQ('question6', 'rizultato');
+    array[0]++;
+    array[4]++;
+})
+//question6 a2
+document.getElementById('q6a2').addEventListener('click', () => {
+    goNextQ('question6', 'rizultato');
+    array[13]++;
+})
+//question6 a3
+document.getElementById('q6a3').addEventListener('click', () => {
+    goNextQ('question6', 'rizultato');
+    array[3]++;
+    array[7]++;
+    array[9]++;
+})
+//question6 a4
+document.getElementById('q6a4').addEventListener('click', () => {
+    goNextQ('question6', 'rizultato');
+    array[10]++;
+    array[12]++;
+    array[7]++;
+})
+//question6 a5
+document.getElementById('q6a5').addEventListener('click', () => {
+    goNextQ('question6', 'rizultato');
+})
 
-    do{
-        swapped = false;
-
-        for(let i = 0; i< n-1; i++){
-            if(arr[i] > arr[i+1]){
-                [arr[i], arr[i+1]] = [arr[i+1],arr[i]];
-            }
-        }
-        n--;
-    }while (swapped)
-        return arr;
-}
-
-function cpy(arr) {
-    let n = array.length;
-    let arr2 =[];
-    for(let i=0; i<n; i++){
-        arr2[i]=arr[i];
-    }
-    return arr2;
-}
-
-
+//RISULTATO
 function updateDiv(){
-    const div = document.getElementById("chi");
+    const div = document.getElementById("chi-text");
 
     let maxIndex = 0;
     for (let i = 1; i < array.length; i++) {
@@ -216,7 +260,7 @@ function updateDiv(){
     let topScoreCount = array.filter(v => v === array[maxIndex]).length;
 
     if (topScoreCount > 1) {
-        div.textContent = "C'è stato un incidente di percorso, quindi nel dubbio dirò San Gerry";
+        div.textContent = "Le tue risposte sono poco chiare perciò andrò sul sicuro rispondendo San Gerry, il 16 compagno (anzi 15 perchè Elvis chi se lo incula)";
         return;
     }
 
@@ -242,9 +286,10 @@ function updateDiv(){
 }
 
 
-//RISULTATO
+
 document.getElementById('risultato').addEventListener('click', () => {
-    document.getElementById('question5').style.display ='none';
+    document.getElementById('rizultato').style.display ='none';
     document.getElementById('result').style.display = 'block';
     updateDiv();
+    console.log(array)
 });
