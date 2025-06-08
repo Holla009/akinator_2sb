@@ -248,6 +248,7 @@ document.getElementById('q6a5').addEventListener('click', () => {
 
 //RISULTATO
 function updateDiv(){
+    const imageDiv = document.getElementById("chi-image");
     const div = document.getElementById("chi-text");
 
     let maxIndex = 0;
@@ -281,6 +282,24 @@ function updateDiv(){
         "Caro Francesco Rossi. Smettila di fottermi l'ombrello o ti buco le ruote della bici",
         "Ciao Francesco Vaghi. Ora che è estate non puoi più fottermi l'ombrello :p"
     ];
+    
+    const images = [
+  "img/giorgia.jpg",
+  "img/chiara.jpg",
+  "img/alice.jpg",
+  "img/holla.jpg",
+  "img/sofia.jpg",
+  "img/giorgio.jpg",
+  "img/elia.jpg",
+  "img/valentine.jpg",
+  "img/ceci.jpg",
+  "img/giacomo.jpg",
+  "img/alida.jpg",
+  "img/leonardo.jpg",
+  "img/mrsrobby.jpg",
+  "img/rossi.jpg",
+  "img/vaghi.jpg"
+];
 
     div.textContent = results[maxIndex];
 }
